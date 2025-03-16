@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AddressBook</name>
+    </assembly>
+    <members>
+        <member name="F:AddressBook.Controllers.AddressBookController._addressBookBL">
+            <summary>
+            Object of BusinessLayer Interface
+            </summary>
+        </member>
+        <member name="M:AddressBook.Controllers.AddressBookController.#ctor(BusinessLayer.Interface.IAddressBookBL,BusinessLayer.Interface.IRabbitMqProducer)">
+            <summary>
+            call the constructor of controller
+            </summary>
+            <param name="context">DbContext from program.cs</param>
+        </member>
+        <member name="M:AddressBook.Controllers.AddressBookController.GetLoggedInUserId">
+            <summary>
+            Get the userId from Token
+            </summary>
+            <returns>return user id from token if present</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.AddressBookController.GetUserRole">
+            <summary>
+            function to get the Role
+            </summary>
+            <returns>Role of user</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.AddressBookController.GetAll">
+            <summary>
+            Get all the addressbook contacts (Admin only)
+            </summary>
+            <returns>Response of Success or failure</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.AddressBookController.GetById(System.Int32)">
+            <summary>
+            Get the address book contact by particular id(Admin can access all ids but user can access only its ids)
+            </summary>
+            <param name="id">id from user</param>
+            <returns>Success or failure response</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.AddressBookController.CreateContact(ModelLayer.DTO.AddressBookDTO)">
+            <summary>
+            Add the Contact in the Address Book
+            </summary>
+            <param name="contact">AddressBookEntry from user in special format</param>
+            <returns>Success or failure response</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.AddressBookController.Update(System.Int32,ModelLayer.DTO.AddressBookDTO)">
+            <summary>
+            Update the Address book entry at particular id
+            </summary>
+            <param name="id">id of contact to update</param>
+            <param name="updatedcontact">updated info of contact</param>
+            <returns>Succes or failure response</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.AddressBookController.Delete(System.Int32)">
+            <summary>
+            Delete the particular id Contact info if present
+            </summary>
+            <param name="id">id of Contact entered by user</param>
+            <returns>Success or failure response</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.UserController.#ctor(BusinessLayer.Interface.IUserBL)">
+            <summary>
+            Constructor to Initialize the instance
+            </summary>
+            <param name="userBL">The Business layer service for user</param>
+        </member>
+        <member name="M:AddressBook.Controllers.UserController.Register(ModelLayer.Model.RegisterDTO)">
+            <summary>
+            Registers a new user
+            </summary>
+            <param name="registerDTO">User Details</param>
+            <returns> Success or Failure Response</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.UserController.Login(ModelLayer.Model.LoginDTO)">
+            <summary>
+            Logs in an existing user
+            </summary>
+            <param name="login">User credentials for login</param>
+            <returns>Success or Failure Message</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.UserController.GetAllUSer">
+            <summary>
+            Method to check the Admin Role
+            </summary>
+            <returns>Returns message(only for admin)</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.UserController.ForgetPassword(System.String)">
+            <summary>
+            Sends a password reset token to users email
+            </summary>
+            <param name="email">the email address of the user</param>
+            <returns>Returns success message if email exists</returns>
+        </member>
+        <member name="M:AddressBook.Controllers.UserController.ResetPassword(ModelLayer.DTO.ResetPasswordDTO)">
+            <summary>
+            Resets the password for user
+            </summary>
+            <param name="resetPassword">the reset token and new password</param>
+            <returns>success message if password reset successfully</returns>
+        </member>
+    </members>
+</doc>
